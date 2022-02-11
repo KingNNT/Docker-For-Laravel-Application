@@ -39,7 +39,7 @@ services:
             - ./services/certbot/www:/var/www/certbot
 
     mysql:
-        image: mysql:8.0.26
+        image: mysql:8.0.28
         container_name: ${APP_NAME}_mysql
         hostname: mysql
         restart: unless-stopped
@@ -131,7 +131,7 @@ services:
             - app_network
 
     npm:
-        image: node:14.17.5
+        image: node:16.14.0
         container_name: ${APP_NAME}_npm
         volumes:
             - ./src:/var/www
