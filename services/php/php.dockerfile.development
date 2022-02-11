@@ -1,4 +1,4 @@
-FROM php:7.4.10-fpm
+FROM php:8.1.3RC1-fpm-buster
 
 ARG PHPGROUP
 ARG PHPUSER
@@ -41,7 +41,7 @@ RUN docker-php-ext-install gd
 RUN docker-php-ext-install exif
 
 RUN mkdir -p /usr/src/php/ext/redis \
-    && curl -L https://github.com/phpredis/phpredis/archive/5.3.4.tar.gz | tar xvz -C /usr/src/php/ext/redis --strip 1 \
+    && curl -L https://github.com/phpredis/phpredis/archive/5.3.6.tar.gz | tar xvz -C /usr/src/php/ext/redis --strip 1 \
     && echo 'redis' >> /usr/src/php-available-exts \
     && docker-php-ext-install redis
 
