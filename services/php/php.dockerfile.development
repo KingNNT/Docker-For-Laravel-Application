@@ -24,8 +24,9 @@ RUN docker-php-ext-install pdo
 
 RUN docker-php-ext-install pdo_mysql
 
-RUN pecl install mcrypt-1.0.3
-RUN docker-php-ext-enable mcrypt
+# NOTE: pecl/mcrypt requires PHP (version >= 7.2.0, version <= 8.0.0, excluded versions: 8.0.0)
+# RUN pecl install mcrypt-1.0.3
+# RUN docker-php-ext-enable mcrypt
 
 RUN docker-php-ext-install mbstring
 
